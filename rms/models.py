@@ -44,6 +44,9 @@ class Order(models.Model):
     total_price=models.IntegerField()
     status=models.CharField(max_length=1,choices=ORDER_STATUS_CHOICES,default='PENDING_CHOICE')
     payment_status=models.BooleanField(default=False)
+    
+    def __str__(self) -> str:
+        return f"Order no{self.id} ({self.table})"
 
 
 
@@ -54,6 +57,7 @@ class OrderItem(models.Model):
     food=models.ForeignKey(Food,on_delete=models.PROTECT)
     order=models.ForeignKey(Order,on_delete=models.PROTECT)
   
-
+    def __str__(self) -> str:
+        return f"Order no{self.order}"
 
 
