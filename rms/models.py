@@ -46,12 +46,10 @@ class Order(models.Model):
     payment_status=models.BooleanField(default=False)
 
 
-    def __str__(self):
-        return self.name
 
 
 
-class OrderItems(models.Model):
+class OrderItem(models.Model):
 
     food=models.ForeignKey(Food,on_delete=models.PROTECT)
     order=models.ForeignKey(Order,on_delete=models.PROTECT)
