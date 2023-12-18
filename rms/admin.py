@@ -37,7 +37,7 @@ class TableAdmin(admin.ModelAdmin):
     
     
 class OrderItemInline(admin.TabularInline):
-    model=OrderItem
+    model=OrderItems
     autocomplete_fields=('food',)
     
     
